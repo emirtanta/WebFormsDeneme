@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogWeb", "BlogWeb\BlogWeb.csproj", "{A17F59DB-E2A1-492F-8EC4-BAADEAD9A7CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiziYorumProje", "DiziYorumProje\DiziYorumProje.csproj", "{C2E1D1A3-C085-4CA8-A61C-5260F86CAD27}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A17F59DB-E2A1-492F-8EC4-BAADEAD9A7CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A17F59DB-E2A1-492F-8EC4-BAADEAD9A7CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A17F59DB-E2A1-492F-8EC4-BAADEAD9A7CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A17F59DB-E2A1-492F-8EC4-BAADEAD9A7CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2E1D1A3-C085-4CA8-A61C-5260F86CAD27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2E1D1A3-C085-4CA8-A61C-5260F86CAD27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2E1D1A3-C085-4CA8-A61C-5260F86CAD27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2E1D1A3-C085-4CA8-A61C-5260F86CAD27}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E11A704-5FA3-4375-AD89-5DC74B69FD41}
+	EndGlobalSection
+EndGlobal

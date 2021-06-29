@@ -1,0 +1,32 @@
+﻿
+/**************** Blog Web WebForms Projesi ***************/
+
+NOT: Bu projede veritabanına bağlantı oluşturulurken DataSet yönetemi ile bağlantı kuruldu.
+
+************ DataSet Oluşturma
+
+=>DataSet; veritabanı bağlantı cümleciğinin bulunduğu ve tabloların bulunduğu yerdir. DataSet oluşturulurken Proje sağ tık data kısmından DataSet seçeneği seçilir.
+
+	DataSet seçildikten sonra veritabanında ilgili Database bulunır
+	Database içerisindeki herhangi bir tablodan ver çekilmek istendiğinde Select sorgusu yazılarak next tuşu ile devam edilir. finish yapılarak bitirilir.
+
+	Repeater tool değeri tablodan foreach döngüsüne benzer veri çekmeye yarar.
+
+	ItemTemplate=> Repeater eklendiği zaman ItemTemplate değerininde eklenmesi gerekmektedir
+
+	<asp:Label ID="Label1" runat="server" Text='<%#Eval("AD") %>'> cümleciğinde Eval bölgesinde tablomuzdaki sütün adının değeri getirilmelidir. Label değeri değişkenlik gösterebilir textbox ya da başka bir şey de olabilir
+
+	NOT: Veritabanı tablolalarından veri çekilmek istendiğinde ilgili tablo için ayrı bir data set oluşturulmalıdır. DataSet/TableAdapter/Next/Next/Sqlcümleciği select işlemi yada crud işlemlerini içeren query sorgusu. Crud sorgularında Her tablo için oluşturulan DataAdapterlere sağ tıklanır Query seçeneğinden Update-Delete-Create seçeneklerinden biri seçilerek ilgili sorgu yazılarak Finis denir
+
+	********************************************************
+
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+
+                //değişecek alan
+     </asp:ContentPlaceHolder>   tool değeri master page içerisine tanımlanarak sayfaların master page içerisine aktarılmasını sağlar.
+
+
+	 *****************************************************
+
+	 HyperLink=> HyperLink tool değeri MVC'deki Html.ActionLink değerine karşılık gelir.
+			

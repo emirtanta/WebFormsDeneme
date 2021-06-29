@@ -1,0 +1,21 @@
+﻿
+/************* Dizi Yprum Projesi ***********************/
+
+	=>Dizi Yorum Projesi WebForms ile EntityFramework kullanılarak yapıldı.
+
+	=>Content içerisindeki web klasöründe kullanıc tarafındaki tema kullanıldı
+
+	<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+	Üstteki değerin karşılığı MVC'de RenderBody'dir.
+
+
+	=> Google harita için google'a html maps embed yazılarak ilk gelen siteye tıklanır
+
+
+	***** DropdownList içerisine veri getirme
+
+	=> Dropdown list tool değerinde özellikler kısmında 
+		DataValueField bölümüne Id değerini ;
+		DataTextFied bölümünede gösterilecek datanın ad değeri eklenir.
