@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="DiziYorumProje.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="DiziYorumProje.Register" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,19 +22,49 @@
    <body>
       <div class="mid-class">
          <div class="art-right-w3ls">
-            <h2>Admin Login Paneli</h2>
+            <h2>Admin Register Paneli</h2>
             <form action="#" method="post" runat="server">
 
                <div class="main">
+
+                   <%-- kullanıcı adı bölümü --%>
                   <div class="form-left-to-w3l">
                       <asp:TextBox ID="txtKullaniciAdi" runat="server" placeholder="Kullanıcı Adınız" required=""></asp:TextBox>
                   </div>
 
+                   <%-- şifre bölümü --%>
                   <div class="form-left-to-w3l ">
                       <asp:TextBox ID="txtSifre" runat="server" placeholder="Şifreniz" required="" TextMode="Password"></asp:TextBox>
                      
                      <div class="clear"></div>
                   </div>
+
+                   <br />
+
+                   <%-- şehir bölümü --%>
+                   <div class="form-left-to-w3l ">
+                       <asp:DropDownList ID="dpdSehir" runat="server">
+                           <asp:ListItem Text="Şehir Seçin" Value="Select" Selected="True"></asp:ListItem>
+                           <asp:ListItem Text="İstanbul" Value="İstanbul"></asp:ListItem>
+                           <asp:ListItem Text="Kocaeli" Value="Kocaeli"></asp:ListItem>
+                       </asp:DropDownList>
+                     
+                     <div class="clear"></div>
+                  </div>
+
+
+                   <%-- cinsiyet bölümü --%>
+                   <div class="form-left-to-w3l ">
+                       <asp:Label ID="Label1" runat="server" Text="Cinsiyet" style="color:#00a1ff"></asp:Label>
+                       <br />
+                       <asp:RadioButtonList ID="rbCinsiyet" runat="server">  
+                            <asp:ListItem>Male</asp:ListItem>  
+                            <asp:ListItem>Female</asp:ListItem>  
+                        </asp:RadioButtonList> 
+                     
+                     <div class="clear"></div>
+                  </div>
+
                </div>
 
                <div class="left-side-forget">
@@ -44,13 +74,13 @@
 
                <div class="right-side-forget">
                   <a href="#" class="for">Şifremi unuttum?</a>
-                  <a href="Register.Aspx" class="for">Üye değilim</a>
+                  <a href="Login.Aspx" class="for">Zaten üyeyim?</a>
                </div>
 
                <div class="clear"></div>
                <div class="btnn">
                    <br />
-                   <asp:Button ID="btnGirisYap" runat="server" Text="Giriş" CssClass="btn btn-info" OnClick="btnGirisYap_Click" />
+                   <asp:Button ID="btnKayitOl" runat="server" Text="Kayıt Ol" CssClass="btn btn-default" BackColor="#00a1ff" ForeColor="White" OnClick="btnKayitOl_Click" />
                </div>
             </form>
             <%--<div class="w3layouts_more-buttn">

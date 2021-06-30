@@ -64,9 +64,45 @@
     <EntitySetMapping Name="TBL_Admin">
       <EntityTypeMapping TypeName="BlogDiziWebFormsDBModel.TBL_Admin">
         <MappingFragment StoreEntitySet="TBL_Admin">
+          <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
+          <ScalarProperty Name="CINSIYET" ColumnName="CINSIYET" />
           <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
           <ScalarProperty Name="KULLANICI" ColumnName="KULLANICI" />
           <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Roller">
+      <EntityTypeMapping TypeName="BlogDiziWebFormsDBModel.TBL_Roller">
+        <MappingFragment StoreEntitySet="TBL_Roller">
+          <ScalarProperty Name="ROLAD" ColumnName="ROLAD" />
+          <ScalarProperty Name="ROLID" ColumnName="ROLID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_City">
+      <EntityTypeMapping TypeName="BlogDiziWebFormsDBModel.TBL_City">
+        <MappingFragment StoreEntitySet="TBL_City">
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
+          <ScalarProperty Name="CITYNAME" ColumnName="CITYNAME" />
+          <ScalarProperty Name="CITYID" ColumnName="CITYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_Country">
+      <EntityTypeMapping TypeName="BlogDiziWebFormsDBModel.TBL_Country">
+        <MappingFragment StoreEntitySet="TBL_Country">
+          <ScalarProperty Name="COUNTRYNAME" ColumnName="COUNTRYNAME" />
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_State">
+      <EntityTypeMapping TypeName="BlogDiziWebFormsDBModel.TBL_State">
+        <MappingFragment StoreEntitySet="TBL_State">
+          <ScalarProperty Name="COUNTRYID" ColumnName="COUNTRYID" />
+          <ScalarProperty Name="STATENAME" ColumnName="STATENAME" />
+          <ScalarProperty Name="STATEID" ColumnName="STATEID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

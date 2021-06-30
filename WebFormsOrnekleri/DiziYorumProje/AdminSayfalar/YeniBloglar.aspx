@@ -12,6 +12,8 @@
         <br />
 
         <asp:TextBox ID="txtGorsel" runat="server" CssClass="form-control" placeholder="Blog Görsel"></asp:TextBox>
+
+        <asp:FileUpload ID="FileUpload1" runat="server" />
         
         <br />
 

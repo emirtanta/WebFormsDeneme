@@ -118,7 +118,9 @@
     <Content Include="AdminSayfalar\Bloglar.aspx" />
     <Content Include="AdminSayfalar\BlogSil.aspx" />
     <Content Include="AdminSayfalar\Istatistikler.aspx" />
+    <Content Include="AdminSayfalar\Roller.aspx" />
     <Content Include="AdminSayfalar\YeniBloglar.aspx" />
+    <Content Include="AdminSayfalar\YeniRoller.aspx" />
     <Content Include="AdminSayfalar\YorumGuncelle.aspx" />
     <Content Include="AdminSayfalar\Yorumlar.aspx" />
     <Content Include="AdminSayfalar\YorumSil.aspx" />
@@ -155,6 +157,7 @@
     <Content Include="Content\web\w3layouts-License.txt" />
     <Content Include="Content\web\Yeni Metin Belgesi.txt" />
     <Content Include="Default.aspx" />
+    <Content Include="Deneme.aspx" />
     <Content Include="Entity\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -190,6 +193,7 @@
     <Content Include="Admin.Master" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Login.aspx" />
+    <Content Include="Register.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -260,12 +264,26 @@
     <Compile Include="AdminSayfalar\Istatistikler.aspx.designer.cs">
       <DependentUpon>Istatistikler.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminSayfalar\Roller.aspx.cs">
+      <DependentUpon>Roller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalar\Roller.aspx.designer.cs">
+      <DependentUpon>Roller.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminSayfalar\YeniBloglar.aspx.cs">
       <DependentUpon>YeniBloglar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminSayfalar\YeniBloglar.aspx.designer.cs">
       <DependentUpon>YeniBloglar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSayfalar\YeniRoller.aspx.cs">
+      <DependentUpon>YeniRoller.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminSayfalar\YeniRoller.aspx.designer.cs">
+      <DependentUpon>YeniRoller.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminSayfalar\YorumGuncelle.aspx.cs">
       <DependentUpon>YorumGuncelle.aspx</DependentUpon>
@@ -318,6 +336,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Deneme.aspx.cs">
+      <DependentUpon>Deneme.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Deneme.aspx.designer.cs">
+      <DependentUpon>Deneme.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -339,6 +364,12 @@
     <Compile Include="Entity\TBL_Blog.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TBL_City.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_Country.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\TBL_Hakkimizda.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -346,6 +377,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TBL_Kategori.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_Roller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\TBL_State.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Entity\TBL_Tur.cs">
@@ -393,6 +430,13 @@
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -417,6 +461,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Dosyalar\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -12,12 +12,9 @@ namespace DiziYorumProje.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TBL_Admin
+    public partial class TBL_Roller
     {
-        public int ID { get; set; }
-        public string KULLANICI { get; set; }
-        public string SIFRE { get; set; }
-        public string CINSIYET { get; set; }
-        public string SEHIR { get; set; }
+        public int ROLID { get; set; }
+        public string ROLAD { get; set; }
     }
 }

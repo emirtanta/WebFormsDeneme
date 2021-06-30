@@ -7,6 +7,8 @@
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="KULLANICI" Type="nvarchar" MaxLength="50" />
     <Property Name="SIFRE" Type="nvarchar" MaxLength="50" />
+    <Property Name="CINSIYET" Type="nvarchar" MaxLength="50" />
+    <Property Name="SEHIR" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TBL_Blog">
     <Key>
@@ -19,6 +21,21 @@
     <Property Name="BLOGGORSEL" Type="nvarchar" MaxLength="500" />
     <Property Name="BLOGTUR" Type="int" />
     <Property Name="BLOGKATEGORI" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_City">
+    <Key>
+      <PropertyRef Name="CITYID" />
+    </Key>
+    <Property Name="CITYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CITYNAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="STATEID" Type="int" />
+  </EntityType>
+  <EntityType Name="TBL_Country">
+    <Key>
+      <PropertyRef Name="COUNTRYID" />
+    </Key>
+    <Property Name="COUNTRYID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="COUNTRYNAME" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TBL_Hakkimizda">
     <Key>
@@ -44,6 +61,21 @@
     </Key>
     <Property Name="KATEGORIID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="KATEGORIAD" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_Roller">
+    <Key>
+      <PropertyRef Name="ROLID" />
+    </Key>
+    <Property Name="ROLID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ROLAD" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBL_State">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="STATENAME" Type="nvarchar" MaxLength="50" />
+    <Property Name="COUNTRYID" Type="int" />
   </EntityType>
   <EntityType Name="TBL_Tur">
     <Key>
@@ -86,6 +118,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TBL_City_TBL_State">
+    <End Role="TBL_State" Type="Self.TBL_State" Multiplicity="0..1" />
+    <End Role="TBL_City" Type="Self.TBL_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_State">
+        <PropertyRef Name="STATEID" />
+      </Principal>
+      <Dependent Role="TBL_City">
+        <PropertyRef Name="STATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_State_TBL_Country">
+    <End Role="TBL_Country" Type="Self.TBL_Country" Multiplicity="0..1" />
+    <End Role="TBL_State" Type="Self.TBL_State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Country">
+        <PropertyRef Name="COUNTRYID" />
+      </Principal>
+      <Dependent Role="TBL_State">
+        <PropertyRef Name="COUNTRYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TBL_Yorum_TBL_Blog">
     <End Role="TBL_Blog" Type="Self.TBL_Blog" Multiplicity="0..1" />
     <End Role="TBL_Yorum" Type="Self.TBL_Yorum" Multiplicity="*" />
@@ -101,9 +157,13 @@
   <EntityContainer Name="BlogDiziWebFormsDBModelStoreContainer">
     <EntitySet Name="TBL_Admin" EntityType="Self.TBL_Admin" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_Blog" EntityType="Self.TBL_Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_City" EntityType="Self.TBL_City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Country" EntityType="Self.TBL_Country" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_Hakkimizda" EntityType="Self.TBL_Hakkimizda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_Iletisim" EntityType="Self.TBL_Iletisim" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_Kategori" EntityType="Self.TBL_Kategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_Roller" EntityType="Self.TBL_Roller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBL_State" EntityType="Self.TBL_State" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_Tur" EntityType="Self.TBL_Tur" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBL_Yorum" EntityType="Self.TBL_Yorum" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_TBL_Blog_TBL_Kategori" Association="Self.FK_TBL_Blog_TBL_Kategori">
@@ -113,6 +173,14 @@
     <AssociationSet Name="FK_TBL_Blog_TBL_Tur" Association="Self.FK_TBL_Blog_TBL_Tur">
       <End Role="TBL_Tur" EntitySet="TBL_Tur" />
       <End Role="TBL_Blog" EntitySet="TBL_Blog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_City_TBL_State" Association="Self.FK_TBL_City_TBL_State">
+      <End Role="TBL_State" EntitySet="TBL_State" />
+      <End Role="TBL_City" EntitySet="TBL_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_State_TBL_Country" Association="Self.FK_TBL_State_TBL_Country">
+      <End Role="TBL_Country" EntitySet="TBL_Country" />
+      <End Role="TBL_State" EntitySet="TBL_State" />
     </AssociationSet>
     <AssociationSet Name="FK_TBL_Yorum_TBL_Blog" Association="Self.FK_TBL_Yorum_TBL_Blog">
       <End Role="TBL_Blog" EntitySet="TBL_Blog" />

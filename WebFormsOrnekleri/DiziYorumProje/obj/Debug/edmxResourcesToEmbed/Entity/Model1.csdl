@@ -116,6 +116,18 @@
       <End Role="TBL_Yorum" EntitySet="TBL_Yorum" />
     </AssociationSet>
     <EntitySet Name="TBL_Admin" EntityType="BlogDiziWebFormsDBModel.TBL_Admin" />
+    <EntitySet Name="TBL_Roller" EntityType="BlogDiziWebFormsDBModel.TBL_Roller" />
+    <EntitySet Name="TBL_City" EntityType="BlogDiziWebFormsDBModel.TBL_City" />
+    <EntitySet Name="TBL_Country" EntityType="BlogDiziWebFormsDBModel.TBL_Country" />
+    <EntitySet Name="TBL_State" EntityType="BlogDiziWebFormsDBModel.TBL_State" />
+    <AssociationSet Name="FK_TBL_City_TBL_State" Association="BlogDiziWebFormsDBModel.FK_TBL_City_TBL_State">
+      <End Role="TBL_State" EntitySet="TBL_State" />
+      <End Role="TBL_City" EntitySet="TBL_City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBL_State_TBL_Country" Association="BlogDiziWebFormsDBModel.FK_TBL_State_TBL_Country">
+      <End Role="TBL_Country" EntitySet="TBL_Country" />
+      <End Role="TBL_State" EntitySet="TBL_State" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TBL_Admin">
     <Key>
@@ -124,5 +136,65 @@
     <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="KULLANICI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="SIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CINSIYET" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SEHIR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
+  <EntityType Name="TBL_Roller">
+    <Key>
+      <PropertyRef Name="ROLID" />
+    </Key>
+    <Property Name="ROLID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TBL_City">
+    <Key>
+      <PropertyRef Name="CITYID" />
+    </Key>
+    <Property Name="CITYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CITYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="STATEID" Type="Int32" />
+    <NavigationProperty Name="TBL_State" Relationship="BlogDiziWebFormsDBModel.FK_TBL_City_TBL_State" FromRole="TBL_City" ToRole="TBL_State" />
+  </EntityType>
+  <EntityType Name="TBL_Country">
+    <Key>
+      <PropertyRef Name="COUNTRYID" />
+    </Key>
+    <Property Name="COUNTRYID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COUNTRYNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBL_State" Relationship="BlogDiziWebFormsDBModel.FK_TBL_State_TBL_Country" FromRole="TBL_Country" ToRole="TBL_State" />
+  </EntityType>
+  <EntityType Name="TBL_State">
+    <Key>
+      <PropertyRef Name="STATEID" />
+    </Key>
+    <Property Name="STATEID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="STATENAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRYID" Type="Int32" />
+    <NavigationProperty Name="TBL_City" Relationship="BlogDiziWebFormsDBModel.FK_TBL_City_TBL_State" FromRole="TBL_State" ToRole="TBL_City" />
+    <NavigationProperty Name="TBL_Country" Relationship="BlogDiziWebFormsDBModel.FK_TBL_State_TBL_Country" FromRole="TBL_State" ToRole="TBL_Country" />
+  </EntityType>
+  <Association Name="FK_TBL_City_TBL_State">
+    <End Type="BlogDiziWebFormsDBModel.TBL_State" Role="TBL_State" Multiplicity="0..1" />
+    <End Type="BlogDiziWebFormsDBModel.TBL_City" Role="TBL_City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_State">
+        <PropertyRef Name="STATEID" />
+      </Principal>
+      <Dependent Role="TBL_City">
+        <PropertyRef Name="STATEID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBL_State_TBL_Country">
+    <End Type="BlogDiziWebFormsDBModel.TBL_Country" Role="TBL_Country" Multiplicity="0..1" />
+    <End Type="BlogDiziWebFormsDBModel.TBL_State" Role="TBL_State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBL_Country">
+        <PropertyRef Name="COUNTRYID" />
+      </Principal>
+      <Dependent Role="TBL_State">
+        <PropertyRef Name="COUNTRYID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

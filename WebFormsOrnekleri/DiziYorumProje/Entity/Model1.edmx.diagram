@@ -15,6 +15,12 @@
         <AssociationConnector Association="BlogDiziWebFormsDBModel.FK_TBL_Blog_TBL_Tur" ManuallyRouted="false" />
         <AssociationConnector Association="BlogDiziWebFormsDBModel.FK_TBL_Yorum_TBL_Blog" ManuallyRouted="false" />
         <EntityTypeShape EntityType="BlogDiziWebFormsDBModel.TBL_Admin" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BlogDiziWebFormsDBModel.TBL_Roller" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="BlogDiziWebFormsDBModel.TBL_City" Width="1.5" PointX="7.875" PointY="8" />
+        <EntityTypeShape EntityType="BlogDiziWebFormsDBModel.TBL_Country" Width="1.5" PointX="3.375" PointY="8.125" />
+        <EntityTypeShape EntityType="BlogDiziWebFormsDBModel.TBL_State" Width="1.5" PointX="5.625" PointY="7.875" />
+        <AssociationConnector Association="BlogDiziWebFormsDBModel.FK_TBL_City_TBL_State" />
+        <AssociationConnector Association="BlogDiziWebFormsDBModel.FK_TBL_State_TBL_Country" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

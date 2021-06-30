@@ -32,5 +32,9 @@ namespace DiziYorumProje.Entity
         public virtual DbSet<TBL_Tur> TBL_Tur { get; set; }
         public virtual DbSet<TBL_Yorum> TBL_Yorum { get; set; }
         public virtual DbSet<TBL_Admin> TBL_Admin { get; set; }
+        public virtual DbSet<TBL_Roller> TBL_Roller { get; set; }
+        public virtual DbSet<TBL_City> TBL_City { get; set; }
+        public virtual DbSet<TBL_Country> TBL_Country { get; set; }
+        public virtual DbSet<TBL_State> TBL_State { get; set; }
     }
 }
